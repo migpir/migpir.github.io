@@ -113,8 +113,15 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            min-height: 80px;
         }
         button {
             padding: 12px 24px;
@@ -176,6 +183,8 @@
         #numberDisplay {
             font-size: min(4vw, 16px);
             color: #FFC107;
+            text-align: center;
+            display: block;
         }
         .winnings-match {
             color: #008000;
@@ -229,6 +238,11 @@
             }
             #numberDisplay {
                 font-size: min(3.5vw, 14px);
+                text-align: center;
+                display: block;
+            }
+            .input-container {
+                min-height: 92px;
             }
             footer {
                 font-size: min(3.5vw, 14px);
@@ -241,8 +255,10 @@
     <h1>Digital Sum Simulation</h1>
     <div class="controls">
         <button onclick="flipAllTiles()">Flip Tiles</button>
-        <input type="number" id="numberInput" min="0" max="999" placeholder="Number">
-        <span id="numberDisplay"></span>
+        <div class="input-container">
+            <input type="number" id="numberInput" min="0" max="999" placeholder="Number">
+            <span id="numberDisplay"></span>
+        </div>
         <button onclick="resetTiles()">Reset</button>
     </div>
     <div class="grid" id="grid"></div>
